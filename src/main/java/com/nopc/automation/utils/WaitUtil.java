@@ -12,6 +12,10 @@ public class WaitUtil {
     private static Duration timeout() { return Duration.ofSeconds(Integer.parseInt(Config.get("explicit.wait.seconds"))); }
     public static WebElement visible(By locator) { return new WebDriverWait(DriverManager.getDriver(), timeout()).
             until(ExpectedConditions.visibilityOfElementLocated(locator)); }
+    public static void visible(WebElement element){
+        WebDriverWait wait=new WebDriverWait(DriverManager.getDriver(),Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
     public static void clickableAndClick(By locator) {
         WebDriverWait wait=new WebDriverWait(DriverManager.getDriver(),Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
