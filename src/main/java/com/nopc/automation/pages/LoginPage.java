@@ -1,5 +1,6 @@
 package com.nopc.automation.pages;
 
+import com.nopc.automation.utils.WaitUtil;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,6 +19,7 @@ public class LoginPage extends BasePage {
         loginBtn.click();
     }
     public String getError(){
+        WaitUtil.visible(error);
         return error.getText();
     }
 }
