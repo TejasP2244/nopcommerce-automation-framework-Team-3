@@ -29,9 +29,10 @@ public class HomePage extends BasePage {
         WebDriverUtil.click(searchButton);
         return new SearchPage();
     }
-    public void navToDesktops(){
+    public SearchPage navToDesktops(){
         WaitUtil.clickableAndClick(computersBtn);
         WaitUtil.clickableAndClick(desktopBtn);
+        return new SearchPage();
     }
     public String getLogoutTxt(){
         WaitUtil.visible(logoutEle);
