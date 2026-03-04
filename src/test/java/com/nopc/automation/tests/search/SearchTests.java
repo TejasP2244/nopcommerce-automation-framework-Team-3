@@ -25,8 +25,7 @@ public class SearchTests extends BaseTest {
     @Test(description="TC16 – Verify product sorting by Price: Low to High")
     public void tc16_sort_low_to_high() throws InterruptedException {
         HomePage home=new HomePage();
-        home.navToDesktops();
-        SearchPage sp=new SearchPage();
+        SearchPage sp=home.navToDesktops();
         sp.sortBy("Price: Low to High");
         sp.waitForPriceSortingLowToHigh();
         List<Double> actualPrices=sp.getAllProductPrices();
@@ -37,8 +36,7 @@ public class SearchTests extends BaseTest {
     @Test(description="TC17 – Verify product sorting by Price: High to Low")
     public void tc17_sort_high_to_low(){
         HomePage home=new HomePage();
-        home.navToDesktops();
-        SearchPage sp=new SearchPage();
+        SearchPage sp=home.navToDesktops();
         sp.sortBy("Price: High to Low");
         sp.waitForPriceSortingHighToLow();
         List<Double> actualPrices=sp.getAllProductPrices();
