@@ -13,7 +13,7 @@ import java.io.IOException;
 public class LoginTests extends BaseTest {
     @DataProvider(name="invalidLoginData")
     public Object[][] invalidLoginData() throws IOException {
-        String path="C:\\Users\\2464193\\Downloads\\nopcommerce-ordered-noapi\\nopcommerce-ordered-noapi\\src\\test\\resources\\LoginData2.xlsx";
+        String path=System.getProperty("user.dir")+"/src/test/resources/LoginData2.xlsx";
         return ExcelUtil.getData(path,"Sheet1");
     }
     @Test(description="TC06 – Verify login with valid credentials")
